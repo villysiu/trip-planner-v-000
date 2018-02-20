@@ -1,4 +1,4 @@
-class TripsController < ApplicationController
+  class TripsController < ApplicationController
 
   def show
   #  if params[:user_id]
@@ -14,11 +14,13 @@ class TripsController < ApplicationController
 
 #    end
   end
+
   def new
     @trip = Trip.new
   end
+
   def create
-puts trip_params
+    puts trip_params
     @trip = Trip.new(trip_params)
     @trip.user_id = current_user.id if current_user
     if @trip && @trip.save

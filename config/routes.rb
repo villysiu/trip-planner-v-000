@@ -7,10 +7,7 @@ Rails.application.routes.draw do
 #  end
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resources :trips 
-
-
-
+  resources :trips
 
   devise_scope :user do
     authenticated :user do
@@ -24,6 +21,6 @@ Rails.application.routes.draw do
   #  delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  #devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
