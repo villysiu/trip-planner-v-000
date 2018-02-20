@@ -1,4 +1,4 @@
 class DailyItinerary < ApplicationRecord
   belongs_to :trip
-  belongs_to :attraction
+  has_many :attractions
 end
