@@ -8,8 +8,7 @@
     #  if @trip.user_id == current_user && current_user.trips.include?(@trip)
     if @trip.user_id == current_user
         @trip
-      else
-        redirect_to user_trips_path(@user), alert: "Trip not found"
+
       end
 
 #    end
@@ -34,12 +33,14 @@
   end
   def index
     #show all trips by user
+    @trips = current_user.trips
   #  if params[:user_id]
   #    if User.find_by(id: params[:user_id]).nil?
-      #  render template: 'artist/index'
+  #      render template: 'trips/index'
   #      redirect_to root_path, flash: { message: "User not found" }
   #    else
-    #    @trips = User.find_by(id: params[:user_id]).trips
+      #  @trips = User.find_by(id: params[:user_id]).trips
+
   #    end
   #  end
   end

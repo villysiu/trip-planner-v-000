@@ -1,1 +1,14 @@
-<%= @trip.title %>
+<P><p><p><p>
+
+<div class="row">
+  <div class="col-sm-12"><%= @trip.title %></div>
+</div>
+  <% @trip.daily_itineraries.sort_by {|k|k.day}.each do |daily_itinerary| %>
+
+  <div class="row">
+    <div class="col-sm-3">Day <%= daily_itinerary.day %></div>
+    <div class="col-sm-4"><%= daily_itinerary.attraction.type.name %></div>
+    <div class="col-sm-4"><%= daily_itinerary.attraction.name %></div>
+    <div class="col-sm-1"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></div>
+</div>
+  <% end %>

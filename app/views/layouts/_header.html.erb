@@ -1,6 +1,6 @@
 <!--  navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top bg-primary" role="navigation">
-      <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -17,7 +17,7 @@
            <% if user_signed_in? %>
               <span class="navbar-text"><li>Welcome, <%=current_user.email%>!</li></span>
               <span class="navbar-text"><li><%= link_to 'create new trip', new_trip_path  %></li></span>
-              <span class="navbar-text"><li><%= link_to 'view trips', user_trips_path  %></li></span>
+              <span class="navbar-text"><li><%= link_to 'view trips', trips_path  %></li></span>
               <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <span class="navbar-text"><li>Hello Guest!</li></span>
@@ -27,4 +27,4 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>

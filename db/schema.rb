@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180216005642) do
+ActiveRecord::Schema.define(version: 20180227003335) do
 
-  create_table "attractions", force: :cascade do |t|
+  create_table "accomodations", force: :cascade do |t|
     t.string "name"
     t.integer "city_id"
     t.integer "country_id"
@@ -20,10 +20,29 @@ ActiveRecord::Schema.define(version: 20180216005642) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "attractions", force: :cascade do |t|
+    t.string "name"
+    t.integer "city_id"
+    t.integer "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "type_id"
+  end
+
   create_table "daily_itineraries", force: :cascade do |t|
     t.integer "day"
     t.integer "attraction_id"
     t.integer "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "accomodation_id"
+    t.integer "restaurant_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.integer "city_id"
+    t.integer "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +54,10 @@ ActiveRecord::Schema.define(version: 20180216005642) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
